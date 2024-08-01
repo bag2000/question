@@ -10,6 +10,30 @@ hello        LoadBalancer   10.233.5.16   <pending>     80:31605/TCP   28m
 kubernetes   ClusterIP      10.233.0.1    <none>        443/TCP        39m
 
 
+kubectl get pods -A
+NAMESPACE     NAME                                      READY   STATUS    RESTARTS   AGE
+default       hello-5f5c8c5997-5sxhw                    1/1     Running   0          75m
+default       hello-5f5c8c5997-c4rrw                    1/1     Running   0          75m
+kube-system   calico-kube-controllers-c7cc688f8-4bvwv   1/1     Running   0          80m
+kube-system   calico-node-g25p4                         1/1     Running   0          80m
+kube-system   calico-node-hrvlv                         1/1     Running   0          80m
+kube-system   calico-node-tbkp8                         1/1     Running   0          80m
+kube-system   coredns-776bb9db5d-lghg4                  1/1     Running   0          79m
+kube-system   coredns-776bb9db5d-wx86z                  1/1     Running   0          79m
+kube-system   dns-autoscaler-6ffb84bd6-dkz4b            1/1     Running   0          79m
+kube-system   kube-apiserver-k8s-master-1               1/1     Running   1          82m
+kube-system   kube-controller-manager-k8s-master-1      1/1     Running   2          82m
+kube-system   kube-proxy-j9kcb                          1/1     Running   0          81m
+kube-system   kube-proxy-pwx9w                          1/1     Running   0          81m
+kube-system   kube-proxy-wbx5j                          1/1     Running   0          81m
+kube-system   kube-scheduler-k8s-master-1               1/1     Running   1          82m
+kube-system   nginx-proxy-k8s-worker-1                  1/1     Running   0          81m
+kube-system   nginx-proxy-k8s-worker-2                  1/1     Running   0          81m
+kube-system   nodelocaldns-nbvvk                        1/1     Running   0          79m
+kube-system   nodelocaldns-rhclf                        1/1     Running   0          79m
+kube-system   nodelocaldns-vflv7                        1/1     Running   0          79m
+
+
 kubectl describe svc hello
 
 Name:                     hello
