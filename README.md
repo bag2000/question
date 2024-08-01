@@ -1,7 +1,7 @@
 # FOPS-10 Поляков Роман
   
   
-ПРОБЛЕМА: При создании LoadBalancer в k8s постоянный <pending>. Работаю с yandex cloud, terraform, ansible (действия ниже).  
+ПРОБЛЕМА: При создании LoadBalancer в k8s постоянный pending. Работаю с yandex cloud, terraform, ansible (действия ниже).  
 ```
 kubectl get svc
 
