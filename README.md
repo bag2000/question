@@ -1,13 +1,14 @@
 # FOPS-10 Поляков Роман
   
   
-ПРОБЛЕМА: При создании LoadBalancer в k8s постоянный pending. Работаю с yandex cloud, terraform, ansible (действия ниже).  
+ПРОБЛЕМА: При создании LoadBalancer в k8s постоянный pending. Работаю с yandex cloud, terraform, ansible (действия ниже).  Deploy и LB - hello.
 ```
-kubectl get svc
+kubectl get svc -A
 
-NAME         TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)        AGE
-hello        LoadBalancer   10.233.5.16   <pending>     80:31605/TCP   28m
-kubernetes   ClusterIP      10.233.0.1    <none>        443/TCP        39m
+NAMESPACE     NAME         TYPE           CLUSTER-IP    EXTERNAL-IP   PORT(S)                  AGE
+default       hello        LoadBalancer   10.233.5.16   <pending>     80:31605/TCP             83m
+default       kubernetes   ClusterIP      10.233.0.1    <none>        443/TCP                  93m
+kube-system   coredns      ClusterIP      10.233.0.3    <none>        53/UDP,53/TCP,9153/TCP   90m
 
 
 kubectl get pods -A
