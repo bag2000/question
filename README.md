@@ -152,6 +152,40 @@ sudo chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=$HOME/.kube/config
 ```
   
+hosts.ini  
+  
+```
+[k8s-cluster:children]
+kube-master
+kube-node
+
+[all]
+k8s-master-1 ansible_host=192.168.99.10 ip=192.168.99.10
+k8s-worker-1 ansible_host=192.168.99.11 ip=192.168.99.11
+k8s-worker-2 ansible_host=192.168.99.140 ip=192.168.99.140
+
+[kube_control_plane]
+k8s-master-1
+
+[kube-master]
+k8s-master-1
+
+[kube-node]
+k8s-worker-1
+k8s-worker-2
+
+[etcd]
+k8s-master-1
+
+[calico-rr]
+
+[vault]
+k8s-master-1
+k8s-worker-1
+k8s-worker-2
+```
+  
+    
 ## Создаю сеть, подсеть, балансер, целевую группу для барансера:  
   
 ```
